@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Unit 1</title>
+        <a href="Unit 11 (1)/" id="Folder"></a>
+        <style>
+            body{
+            margin:0;
+            overflow: hidden;
+            }
+            </style>
+    </head>
+    <body>
+        <img src="Unit 11 (1)/Slide1.jpg" id="Image"alt="THE IMAGE">
+        <button>CLICKKK</button>
+        <script>
+            let pic = document.getElementById("Image");
+            let FolderPics = document.getElementById("Folder");
+            //so this might be the dumbest idea i've ever done but yolo
+            let a = 0;
+            let imag3s = []
+            for(i = 0; i < 30; i++){
+                imag3s.push(`Slide${i+1}.jpg`)
+            }
+                // Calculate the aspect ratio of the image
+                let aspectRatio = pic.width / pic.height;
+
+                //check stuff
+                if (aspectRatio > window.innerWidth / window.innerHeight) {
+                // Limiting factor is width
+                pic.style.width = `${window.innerWidth}px`;
+                pic.style.height = 'auto';
+                } else {
+                // Limiting factor is height
+                pic.style.width = 'auto';
+                pic.style.height = `${window.innerHeight}px`;
+                }
+            let ImageText = `Unit 11 (1)/${imag3s[a]}`
+            pic.src = ImageText
+            document.addEventListener("click",()=>{
+                if(a == imag3s.length-1){
+                    a = 0
+                }else{
+                    a++
+                }
+                ImageText = `Unit 11 (1)/${imag3s[a]}`
+                pic.src = ImageText
+            })
+        </script>
+    </body>
+</html>
